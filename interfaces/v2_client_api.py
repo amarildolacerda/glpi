@@ -3,7 +3,7 @@ from fastapi import APIRouter
 from core.orchestrator import Orchestrator
 from core.schemas import AutoPilotRequest, AutoPilotResponse
 
-router = APIRouter(tags=["phase2"])
+router = APIRouter(tags=["v2"])
 orchestrator = Orchestrator()
 
 

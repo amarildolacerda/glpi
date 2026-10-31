@@ -310,7 +310,7 @@ glpi-ai-support/
 │   └── schemas.py
 ├── interfaces/
 │   ├── v1_agent_api.py
-│   └── phase2_client_api.py
+│   └── v2_client_api.py
 ├── feedback/
 │   ├── logger.py
 │   └── metrics.py
