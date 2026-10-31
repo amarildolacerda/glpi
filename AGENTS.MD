@@ -116,6 +116,14 @@ Toda alteração deve ser acompanhada de evidência objetiva, como:
 
 Não se deve assumir que o comportamento está correto apenas porque a mudança foi implementada.
 
+## Versionamento da implementação
+
+- A versão da implementação deve ser centralizada e rastreável em um único ponto do projeto.
+- O padrão de versionamento deve seguir o formato `vx.x.x`.
+- A versão deve ser incrementada sempre que houver promoção para produção.
+- A promoção para produção deve ser acompanhada da atualização explícita da versão correspondente.
+- Mudanças em desenvolvimento podem ocorrer sem promoção, mas a mudança de versão só deve acontecer no momento da liberação para produção.
+
 ## Estrutura de diretórios esperada
 
 - `core/`
