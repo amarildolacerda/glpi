@@ -266,6 +266,8 @@ A solução é desenhada para atender requisitos fundamentais de qualidade e ope
 - suporte a LLM local para soberania e redução de dependência de provedores externos;
 - autenticação e autorização por perfil;
 - isolamento de credenciais por variáveis de ambiente;
+- uso obrigatório de arquivo `.env` local para valores reais e sensíveis, sem commit no repositório;
+- uso de `.env_default` como referência versionada para novos ambientes e para qualquer mudança de configuração que precise ser replicada;
 - rastreabilidade completa de operações;
 - cobertura de testes no núcleo da aplicação.
 
@@ -274,7 +276,10 @@ Esses requisitos influenciam diretamente decisões como:
 - separação entre API e lógica de negócio;
 - uso de modelos e prompts configuráveis;
 - centralização do cliente GLPI;
-- uso de sistema de logs e auditoria.
+- uso de sistema de logs e auditoria;
+- criação e manutenção do arquivo `.env_default` como espelho de referência para novos ambientes, sempre que uma nova variável ou parâmetro de configuração for adicionado.
+
+> Observação: o arquivo `.env` deve permanecer local e fora do controle de versão. O `.env_default` existe para documentar os valores esperados e facilitar a replicação em outro ambiente sem expor segredos.
 
 ---
 

@@ -47,3 +47,17 @@ class FeedbackRequest(BaseModel):
     util: bool
     editado: bool = False
     comentario: str | None = None
+
+
+class AutoPilotRequest(BaseModel):
+    pergunta: str = Field(..., min_length=1)
+    canal: str = Field(..., examples=["portal", "widget", "whatsapp"])
+    cliente_token: str = Field(..., min_length=1)
+
+
+class AutoPilotResponse(BaseModel):
+    auto_pilot: bool = True
+    resolvido: bool
+    resposta: str
+    confianca: float
+    ticket_id: int | None = None

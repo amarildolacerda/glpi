@@ -1,0 +1,17 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: glpi-ai-support
+    ports:
+      - "8000:8000"
+    environment:
+      APP_NAME: ${APP_NAME:-glpi-ai-support}
+      APP_VERSION: ${APP_VERSION:-0.1.0}
+      APP_ENVIRONMENT: ${APP_ENVIRONMENT:-development}
+      GLPI_BASE_URL: ${GLPI_BASE_URL:-https://glpi.example}
+      GLPI_API_TOKEN: ${GLPI_API_TOKEN:-}
+    volumes:
+      - .:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
