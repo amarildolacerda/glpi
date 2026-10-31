@@ -14,27 +14,27 @@ prd_maturity: planning-ready
 
 Assistente de IA para suporte em GLPI que apoia o agente humano na Fase 1 — sugestão de resposta, classificação de ticket, artigos da base de conhecimento e criação de ticket somente após aprovação — e prepara o mesmo núcleo para o autoatendimento do cliente na Fase 2, com guardrails mais rígidos e escalonamento automático. O produto serve agentes de suporte, gestores de atendimento e, numa segunda fase, clientes finais que interagem direto com o assistente. A proposta central é usar a mesma base arquitetural nas duas fases, preservando o núcleo de orquestração, RAG, integração GLPI e guardrails, variando apenas interface e políticas por perfil.
 
-Proveniência: [README](../README.md) (visão geral e público-alvo) e [Especificação Técnica — Assistente de IA](../docs/legacy/spec/Especifica%C3%A7%C3%A3o%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA.md) §1–2.
+Proveniência: [README](../README.md) (visão geral e público-alvo) e [Especificação Técnica — Assistente de IA](../docs/legacy/spec/Especificação Técnica — Assistente de IA.md) §1–2.
 
 ## Vision and Why Now
 
 A equipe de suporte usa o GLPI para gestão de tickets, ativos e base de conhecimento, e o volume e a repetitividade dos atendimentos consomem tempo dos agentes. A visão é construir um assistente de suporte inteligente, seguro e extensível, capaz de acelerar o atendimento em GLPI e preparar a organização para um modelo de suporte mais escalável e automatizado no futuro. A urgência vem da pressão por primeira resposta rápida somada à necessidade de manter qualidade, segurança e rastreabilidade: enquanto isso não é endereçado, o custo operacional cresce e a base de conhecimento continua subutilizada. A mudança pretendida é reduzir o tempo de primeira resposta em −30% e elevar a acurácia de classificação para ≥85%, sem substituir a decisão humana.
 
-Proveniência: [Especificação Técnica](../docs/legacy/spec/Especifica%C3%A7%C3%A3o%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA.md) §1.1–1.2; [README](../README.md) (objetivo de longo prazo).
+Proveniência: [Especificação Técnica](../docs/legacy/spec/Especificação Técnica — Assistente de IA.md) §1.1–1.2; [README](../README.md) (objetivo de longo prazo).
 
 ## Problem Statement
 
 O suporte no GLPI frequentemente lida com tickets repetitivos e com necessidade de resposta rápida, mas a equipe também precisa manter qualidade, segurança e rastreabilidade. Os agentes perdem tempo com atendimentos repetitivos, a classificação de categoria/urgência é inconsistente e os artigos da base de conhecimento não são reaproveitados na hora do atendimento. Sem apoio, o tempo de primeira resposta permanece alto, a acurácia da classificação cai e a organização não constrói a base necessária para um futuro autoatendimento. O assistente atua como apoio cognitivo: sugere respostas, identifica artigos relevantes da base, classifica o ticket e reduz a carga operacional sem substituir a decisão humana.
 
-Proveniência: [README](../README.md) (problema que resolve); [Especificação Técnica](../docs/legacy/spec/Especifica%C3%A7%C3%A3o%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA.md) §1.1.
+Proveniência: [README](../README.md) (problema que resolve); [Especificação Técnica](../docs/legacy/spec/Especificação Técnica — Assistente de IA.md) §1.1.
 
 ## Background and Evidence
 
 Não há discovery formal registrado (sem ledger EVD-### neste bootstrap). Fontes concretas desta baseline, com evidência distinguida de premissa:
 
-- **Evidência documental**: [Especificação Técnica §1.1](../docs/legacy/spec/Especifica%C3%A7%C3%A3o%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA.md) declara volume e repetitividade como causa do consumo de tempo; [README](../README.md) descreve o mesmo problema; [Backlog Inicial — MVP Fase 1](../docs/legacy/plan/Backlog%20Inicial%20%E2%80%94%20MVP%20Fase%201.md) e [Checklist de Entregáveis](../docs/legacy/plan/Checklist%20de%20Entreg%C3%A1veis%20%E2%80%94%20Assistente%20de%20IA%20para%20GLPI.md) documentam a sequência de entregáveis acordada.
+- **Evidência documental**: [Especificação Técnica §1.1](../docs/legacy/spec/Especificação Técnica — Assistente de IA.md) declara volume e repetitividade como causa do consumo de tempo; [README](../README.md) descreve o mesmo problema; [Backlog Inicial — MVP Fase 1](../docs/legacy/plan/Backlog Inicial — MVP Fase 1.md) e [Checklist de Entregáveis](../docs/legacy/plan/Checklist de Entregáveis — Assistente de IA para GLPI.md) documentam a sequência de entregáveis acordada.
 - **Premissa (não medida)**: não há baseline de tempo de primeira resposta, taxa de acerto de classificação ou cobertura de KB registrada — os alvos da §1.2 são metas de negócio assumidas, não medições atuais.
-- **Evidência de implementação**: núcleo existente (`core/`, `interfaces/`, `tests/`) com 8 arquivos de teste e rastreador de etapas em [Especificações por precedência — SP1 a SP11](../docs/legacy/spec/Especifica%C3%A7%C3%B5es%20por%20preced%C3%AAncia%20%E2%80%94%20SP1%20a%20SP11.md).
+- **Evidência de implementação**: núcleo existente (`core/`, `interfaces/`, `tests/`) com 8 arquivos de teste e rastreador de etapas em [Especificações por precedência — SP1 a SP11](../docs/legacy/spec/Especificações por precedência — SP1 a SP11.md).
 
 ## Target Users, Stakeholders, and Core Personas
 
@@ -75,7 +75,7 @@ Não há discovery formal registrado (sem ledger EVD-### neste bootstrap). Fonte
 
 ## Scope Summary
 
-A fronteira decidida para esta entrega de validação é a Fase 1 (apoio ao agente) em piloto controlado, mais os preparatórios de Fase 2 já embutidos no núcleo (RF2.x). A Fase 2 completa (portal/widget no ar com auto-resolução) só é liberada após o gate objetivo da §10.2 da especificação. Fonte: [Especificação Técnica §2](../docs/legacy/spec/Especifica%C3%A7%C3%A3o%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA.md).
+A fronteira decidida para esta entrega de validação é a Fase 1 (apoio ao agente) em piloto controlado, mais os preparatórios de Fase 2 já embutidos no núcleo (RF2.x). A Fase 2 completa (portal/widget no ar com auto-resolução) só é liberada após o gate objetivo da §10.2 da especificação. Fonte: [Especificação Técnica §2](../docs/legacy/spec/Especificação Técnica — Assistente de IA.md).
 
 ### In-Scope Capabilities
 
@@ -136,7 +136,7 @@ A fronteira decidida para esta entrega de validação é a Fase 1 (apoio ao agen
 | RNF8 | Idempotência na criação de tickets | Chave de idempotência obrigatória |
 | RNF9 | Testes automatizados no núcleo | ≥ 80% cobertura |
 
-Numeração RF/RNF preservada de [Especificação Técnica §4–5](../docs/legacy/spec/Especifica%C3%A7%C3%A3o%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA.md); nenhum requisito novo foi criado nesta migração.
+Numeração RF/RNF preservada de [Especificação Técnica §4–5](../docs/legacy/spec/Especificação Técnica — Assistente de IA.md); nenhum requisito novo foi criado nesta migração.
 
 ## Product Capability Map
 
@@ -185,7 +185,7 @@ Only decided in-scope capability clusters receive stable IDs.
 - Núcleo compartilhado entre fases, sem duplicação de lógica (RF2.6).
 - Idempotência obrigatória na criação de tickets (RNF8) e auditoria completa (RNF4).
 - Guardrails são parte central da arquitetura, não camada opcional.
-- Governança: desenvolvimento em `dev`; promoção para `main` com autorização prévia; versão `vx.x.x` incrementada na promoção ([AGENTS.md](../AGENTS.md), [Checklist §4](../docs/legacy/plan/Checklist%20de%20Entreg%C3%A1veis%20%E2%80%94%20Assistente%20de%20IA%20para%20GLPI.md)).
+- Governança: desenvolvimento em `dev`; promoção para `main` com autorização prévia; versão `vx.x.x` incrementada na promoção ([AGENTS.md](../AGENTS.md), [Checklist §4](../docs/legacy/plan/Checklist de Entregáveis — Assistente de IA para GLPI.md)).
 
 ## Dependencies
 
@@ -206,7 +206,7 @@ Only decided in-scope capability clusters receive stable IDs.
 - **Baixa adesão dos agentes** *(impacto: Alto)*: piloto com early adopters + métricas de ganho visíveis.
 - **Regressão na Fase 2** *(impacto: Alto)*: gate formal; rollback por feature flag.
 
-Proveniência: [Especificação Técnica §11](../docs/legacy/spec/Especifica%C3%A7%C3%A3o%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA.md).
+Proveniência: [Especificação Técnica §11](../docs/legacy/spec/Especificação Técnica — Assistente de IA.md).
 
 ## Open Questions
 
@@ -227,7 +227,7 @@ Valor e outcomes são validados por piloto controlado com agentes reais antes de
 - guardrails implementados e testados em modo permissivo;
 - plano de escalonamento documentado e validado.
 
-A Fase 1 só considera o MVP pronto com evidência objetiva (testes, auditoria, aprovação humana sempre exigida), conforme o critério de pronto do [Checklist §3](../docs/legacy/plan/Checklist%20de%20Entreg%C3%A1veis%20%E2%80%94%20Assistente%20de%20IA%20para%20GLPI.md).
+A Fase 1 só considera o MVP pronto com evidência objetiva (testes, auditoria, aprovação humana sempre exigida), conforme o critério de pronto do [Checklist §3](../docs/legacy/plan/Checklist de Entregáveis — Assistente de IA para GLPI.md).
 
 ## Domain Glossary / Terminology
 
@@ -248,7 +248,7 @@ A Fase 1 só considera o MVP pronto com evidência objetiva (testes, auditoria, 
 
 ## Project Context Baseline Updates
 
-- Rastreador de etapas em [Especificações por precedência — SP1 a SP11](../docs/legacy/spec/Especifica%C3%A7%C3%B5es%20por%20preced%C3%AAncia%20%E2%80%94%20SP1%20a%20SP11.md): SP1, SP3 e SP4 em EM ANDAMENTO; SP2 DONE; SP5–SP11 declarados DONE — declaração sem evidência de validação correspondente, sujeita a reavaliação.
+- Rastreador de etapas em [Especificações por precedência — SP1 a SP11](../docs/legacy/spec/Especificações por precedência — SP1 a SP11.md): SP1, SP3 e SP4 em EM ANDAMENTO; SP2 DONE; SP5–SP11 declarados DONE — declaração sem evidência de validação correspondente, sujeita a reavaliação.
 - Lacunas de implementação reconhecidas para o núcleo: contratos de erro/validação (SP3), integração GLPI real (SP4), LLM real (SP6), guardrails invocados em todos os fluxos (SP7), persistência de observabilidade (SP8).
 - Divergência conhecida entre spec (§6.4 `/fase2/atender`) e código (`/v2/atender`), com decisão a registrar na atualização da especificação.
 - Planos de execução existentes em [docs/plan](../docs/legacy/plan/README.md) para SP3, SP6, SP7, SP8 e SP11; SP2 e SP4 ainda sem plano correspondente (dívida de processo).

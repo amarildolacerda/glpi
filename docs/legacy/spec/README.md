@@ -53,4 +53,4 @@ A implementação do projeto deve seguir as especificações organizadas por pre
 10. SP10 — MVP da Fase 1
 11. SP11 — Evolução para Fase 2
 
-A documentação detalhada da sequência está em [Especificações por precedência — SP1 a SP11.md](Especificações%20por%20preced%C3%AAncia%20%E2%80%94%20SP1%20a%20SP11.md).
+A documentação detalhada da sequência está em [Especificações por precedência — SP1 a SP11.md](Especificações por precedência — SP1 a SP11.md).

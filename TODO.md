@@ -5,12 +5,18 @@ Este arquivo registra pendências, ajustes e solicitações de implementação. 
 ## Pendentes
 
 ### Sequência executiva recomendada (próxima onda de trabalho)
-1. **Pesquisar e consolidar requisitos de suporte** — compreender dores, feedbacks e desejos de suporte, agentes e administradores; gerar uma base objetiva para priorizar a Fase 1 e a interface do atendente.
-2. **Definir a visão de produto das fases** — fechar a arquitetura de entrega: infraestrutura + API, dashboard do atendente, interface do cliente final, e decisão entre solução separada versus plugin no GLPI.
+1. **Pesquisar e consolidar requisitos de suporte** — compreender dores, feedbacks e desejos de suporte, agentes e administradores; gerar uma base objetiva para priorizar a Fase 1 e a interface do atendente. **Pesquisa concluída**: foco em redução de tempo de primeira resposta, classificação de urgência, acesso rápido à KB, aprovação humana obrigatória e feedback/observabilidade como diferenciais de qualidade.
+2. **Definir a visão de produto das fases** — fechar a arquitetura de entrega: infraestrutura + API, dashboard do atendente, interface do cliente final, e decisão entre solução separada versus plugin no GLPI. **Direção adotada**: Fase 1 = painel interno de suporte; Fase 2 = API-only para portal do GLPI; núcleo compartilhado, sem UI própria no cliente antes do gate.
 3. **Fechar a feature E001 em SDDP** — criar `specs/00001-contratos-de-erro/` e rodar o pipeline lean `spec -> plan -> implement -> QC -> commit` para o epic E001.
 4. **Implementar o núcleo da Fase 1** — seguir com E002–E005 (GLPI real, LLM real, guardrails e observabilidade), validando cada epic contra o plano e os testes relevantes.
 5. **Preparar a transição para a Fase 2** — E006–E008 (contrato `/v2/atender`, escalonamento e gate de prontidão), com evidência e aprovação antes de avançar.
 6. **Encaminhar operação e release** — concluir `specs/dod.md`, validar commit do pacote SDDP, reiniciar o OpenCode e, somente com autorização, fazer o `git push` para `origin`.
+
+### Resultado da pesquisa e valor para clientes
+- **Maior valor percebido pelo cliente interno**: reduzir tempo de primeira resposta, padronizar a classificação de categoria/urgência, sugerir artigos relevantes e registrar aprovação/editoria do agente.
+- **Maior valor percebido pela operação**: liberar agentes de tarefas repetitivas, reduzir retrabalho, melhorar rastreabilidade e métricas de qualidade.
+- **Valor de maior impacto para roadmap**: (1) dashboard interno do agente, (2) sugestões de resposta com contexto e KB, (3) observabilidade + feedback, (4) portal do cliente em API-only na Fase 2.
+- **Roadmap orientado por valor**: entregar primeiro o núcleo de orquestração + busca + classificação + aprovação; depois expandir para a interface do cliente via API, sem duplicar a lógica de negócio.
 
 - fazer uma pesquisa sobre o tema "suporte de software" e registros de tickets para obter pontos relevantes, tipo de feedback e desejos de usuario de suporte e administradores de equipes de suporte;
 - redefinir as fases: fase1: construção de infra-estrutura (ex: api) com acesso manual sem interface; fase1: construção de uma interface web de uso do atendente do suporte (dashboard, questões mais usadas; qtde de atendimentos do dia; login;) - (a pagina tem header, drawer a esquerda, pagina principal, footter de estatus; fase3 - interface para usuario final (o cliente); avaliar se é melhor uma solução separada ou um plugin para o GPLI;

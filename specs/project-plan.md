@@ -15,13 +15,13 @@ dod_source: none
 
 ## Status das Etapas por Precedência e Dívidas de Processo
 
-Status por etapa conforme o rastreador [docs/spec/Especificações por precedência — SP1 a SP11](../docs/legacy/spec/Especifica%C3%A7%C3%B5es%20por%20preced%C3%AAncia%20%E2%80%94%20SP1%20a%20SP11.md) e lacunas registradas no [TODO](../TODO.md):
+Status por etapa conforme o rastreador [docs/spec/Especificações por precedência — SP1 a SP11](../docs/legacy/spec/Especificações por precedência — SP1 a SP11.md) e lacunas registradas no [TODO](../TODO.md):
 
 | Etapa | Status no rastreador | Ressalva / lacuna |
 |-------|----------------------|-------------------|
 | SP1 — Base de alinhamento e governança | EM ANDAMENTO | documentação base consolidada; fechamento pendente |
 | SP2 — Arquitetura e desenho do sistema | DONE | sem plano de execução correspondente (dívida de processo) |
-| SP3 — Contratos de API | EM ANDAMENTO | plano aprovado em [docs/plan/Plano de execução — SP3](../docs/legacy/plan/Plano%20de%20execu%C3%A7%C3%A3o%20%E2%80%94%20SP3%20Contratos%20de%20API.md); faltam contratos de erro, testes negativos e alinhamento da spec 6.4 → E001 |
+| SP3 — Contratos de API | EM ANDAMENTO | plano aprovado em [docs/plan/Plano de execução — SP3](../docs/legacy/plan/Plano de execução — SP3 Contratos de API.md); faltam contratos de erro, testes negativos e alinhamento da spec 6.4 → E001 |
 | SP4 — Integração com GLPI | EM ANDAMENTO | sem plano correspondente (dívida); GLPI real (solicitante, tickets similares, idempotência, auditoria) → E002 |
 | SP5 — Base de conhecimento e RAG | DONE (declarado) | **resalva**: declarado sem reavaliação de evidência — reavaliar no gate → E008 |
 | SP6 — IA e resposta sugerida | DONE (declarado) | **resalva**: faltam provedor LLM real, prompts versionados e confiança do modelo → E003; reavaliar → E008 |
@@ -45,6 +45,22 @@ Status por etapa conforme o rastreador [docs/spec/Especificações por precedên
 Proveniência: [TODO.md](../TODO.md) (roadmap e dívidas), [docs/plan/README.md](../docs/legacy/plan/README.md).
 
 ## Epic Checklist
+
+### Definição das fases e roadmap
+
+> A decisão de arquitetura para este projeto foi consolidada como: a base de serviço e orquestração é compartilhada por todas as fases; a diferenciação vem da interface e das políticas de guardrails/segurança, não da duplicação do núcleo.
+
+- **Fase 1 — apoio ao agente humano**: dashboard interno do suporte, com notebooks/filas, contexto do ticket, artigos sugeridos, classificação de urgência/categoria, resposta sugerida e aprovação antes de qualquer ação crítica. Objetivo: reduzir tempo de primeira resposta e aumentar consistência operacional sem substituir a supervisão humana.
+- **Fase 2 — portal do cliente via API-only**: o cliente final não terá uma UI própria neste projeto. O portal do GLPI consome a API do mesmo núcleo para criar/consultar atendimento, com regras mais rígidas, confirmação de identidade e escalonamento para humano quando necessário. Objetivo: preparar o mesmo núcleo para autoatendimento controlado, sem duplicar lógica do suporte interno.
+- **Fase futura (opcional)**: somente se houver necessidade de produto fora do GLPI, uma interface externa ou widget diferente pode ser adicionada como cliente da API, sem alterar o núcleo compartilhado. No escopo atual, não é uma prioridade e não é requisito para a Fase 2.
+
+### Valor para o cliente e priorização por impacto
+
+> A pesquisa de suporte confirmou que o benefício mais evidente para clientes e operação é reduzir o tempo de primeira resposta sem perder qualidade. Em ordem de impacto prático, o roadmap deve priorizar: (1) apoio ao agente com resposta sugerida e KB, (2) classificação confiável de categoria/urgência, (3) observabilidade e feedback para melhoria contínua, e (4) autoatendimento via API-only do portal GLPI em uma segunda fase.
+
+- **Prioridade de entrega**: dashboard interno do atendente → suporte inteligente → observabilidade → autoatendimento via API.
+- **Valor direto para o cliente**: resposta rápida, consistência da triagem, acesso imediato a artigos relevantes, e aprovação humana em ações críticas.
+- **Valor direto para a operação**: menos retrabalho, maior rastreabilidade, comparação de volume e qualidade, e capacidade de evoluir para portal do cliente sem reescrever o núcleo.
 
 ### Wave 1 — Núcleo fechado
 
@@ -171,4 +187,4 @@ Antes de sair da Wave N para a Wave N+1, verificar:
 - [ ] os artefatos compartilhados previstos (`ErrorResponse`, cliente GLPI, contrato `/v2/atender`, persistência) foram produzidos e documentados;
 - [ ] os contratos de dependência entre epics são satisfatíveis (entidade + epic de origem: cliente GLPI de E002 para E007; contrato de E006 para E007);
 - [ ] nenhuma mudança comprometeu o núcleo compartilhado entre Fase 1 e Fase 2, os guardrails ou a auditoria;
-- [ ] para a saída da Wave 3: gate §10.2 da [Especificação Técnica](../docs/legacy/spec/Especifica%C3%A7%C3%A3o%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA.md) avaliado com evidência, com decisão de liberar ou não a Fase 2 registrada.
+- [ ] para a saída da Wave 3: gate §10.2 da [Especificação Técnica](../docs/legacy/spec/Especificação Técnica — Assistente de IA.md) avaliado com evidência, com decisão de liberar ou não a Fase 2 registrada.

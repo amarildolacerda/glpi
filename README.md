@@ -83,12 +83,12 @@ Para informações detalhadas sobre requisitos, arquitetura, implementação e p
 ### Especificação e arquitetura
 - [specs/prd.md](specs/prd.md) — requisitos do produto
 - [specs/sad.md](specs/sad.md) — arquitetura e decisões (ADRs em [specs/adrs/](specs/adrs/))
-- Documentação legada migrada em [docs/legacy/](docs/legacy/spec) (referência histórica)
+- Documentação legada migrada em [docs/legacy/spec](docs/legacy/spec) e [docs/legacy/plan](docs/legacy/plan) (referência histórica)
 
 ### Plano de execução
 - [specs/project-plan.md](specs/project-plan.md) — ondas, épicos e dependências
 - Planos legados do modelo SP1–SP11 em [docs/legacy/plan/](docs/legacy/plan)
-- [AGENTS.md](AGENTS.md)
+- [AGENTS.MD](AGENTS.MD)
 
 ### Regra de processo
 

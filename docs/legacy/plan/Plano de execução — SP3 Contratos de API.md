@@ -8,7 +8,7 @@ Status: EM ANDAMENTO
 
 ## Status
 
-SP3: EM ANDAMENTO (conforme rastreador em [Especificações por precedência — SP1 a SP11](../spec/Especifica%C3%A7%C3%B5es%20por%20preced%C3%AAncia%20%E2%80%94%20SP1%20a%20SP11.md)).
+SP3: EM ANDAMENTO (conforme rastreador em [Especificações por precedência — SP1 a SP11](../spec/Especificações por precedência — SP1 a SP11.md)).
 
 Os payloads e as rotas da Fase 1 já existem (`core/schemas.py`, `interfaces/v1_agent_api.py`, `interfaces/v2_client_api.py`). Faltam os contratos de erro e validação (SP3, conteúdo mínimo), os testes negativos e o alinhamento da spec 6.4.
 

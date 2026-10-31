@@ -10,6 +10,7 @@
 - Fontes de verdade: `specs/prd.md`, `specs/sad.md`, `specs/project-plan.md`, `specs/dod.md` (stub pendente), `specs/adrs/`, `specs/NNNNN-slug/` (nenhuma feature ainda).
 - Fase 2 = **API-only para o portal GLPI** (ADR-0001, sem UI própria); execução via épicos E001–E008 em `specs/project-plan.md` (Wave 1 núcleo, Wave 2 Fase 2, Wave 3 gate).
 - Nada em produção; tudo em `dev`; promoção a `main` exige autorização explícita.
+- **Resultado da pesquisa de suporte**: maior valor para clientes/operadores está em reduzir tempo de primeira resposta, padronizar urgência/categoria, sugerir artigos da KB e manter aprovação humana em ações críticas.
 
 ## Estado do repositório [30/10]
 
