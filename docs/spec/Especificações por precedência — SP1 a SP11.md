@@ -1,7 +1,7 @@
 # Especificações por precedência — SP1 a SP11
 
 Versão: 1.0
-Status: Proposta
+Status: Aprovada
 Última atualização: 31/10/2026
 
 ---
@@ -35,7 +35,7 @@ A ordem de execução deve seguir a precedência abaixo, sem pular etapas:
 
 ## SP1 — Base de alinhamento e governança
 
-Status: TODO
+Status: EM ANDAMENTO
 
 ### Objetivo
 Estabelecer o escopo, os objetivos, as regras de processo e a base documental do projeto.
@@ -62,7 +62,7 @@ Documento base do projeto com visão, objetivos, regras e alinhamento do escopo.
 
 ## SP2 — Arquitetura e desenho do sistema
 
-Status: TODO
+Status: DONE
 
 ### Objetivo
 Definir o desenho estrutural do sistema e a separação entre as camadas de negócio, interface, integração e apoio.
@@ -88,7 +88,7 @@ Arquitetura do sistema validada e compatível com a especificação do projeto.
 
 ## SP3 — Contratos de API
 
-Status: TODO
+Status: EM ANDAMENTO
 
 ### Objetivo
 Definir os contratos de entrada e saída das interfaces públicas do assistente.
@@ -114,7 +114,7 @@ API versionada e contratos formalizados para os principais fluxos do assistente.
 
 ## SP4 — Integração com GLPI
 
-Status: TODO
+Status: EM ANDAMENTO
 
 ### Objetivo
 Definir a estratégia de integração com o GLPI para consulta, contexto e criação de tickets com aprovação humana.

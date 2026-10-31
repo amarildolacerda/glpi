@@ -2,7 +2,7 @@
 
 ## Visão geral
 
-Este repositório tem como objetivo implantar um assistente de IA para suporte no GLPI, seguindo a especificação técnica em [docs/Especificação Técnica — Assistente de IA](docs/Especificação%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA).
+Este repositório tem como objetivo implantar um assistente de IA para suporte no GLPI, seguindo a especificação técnica em [docs/spec/Especificação Técnica — Assistente de IA.md](docs/spec/Especifica%C3%A7%C3%A3o%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA.md).
 
 A prioridade inicial é a Fase 1: apoio ao agente humano. A Fase 2 (autoatendimento do cliente) deve ser pensada como evolução do mesmo núcleo, não como reescrita do projeto.
 
@@ -142,7 +142,9 @@ Não se deve assumir que o comportamento está correto apenas porque a mudança 
 
 ## Instrução para agentes
 
-Antes de propor ou aplicar mudanças, leia a especificação técnica em [docs/Especificação Técnica — Assistente de IA](docs/Especificação%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA) e mantenha a implementação alinhada ao escopo do projeto.- Antes de iniciar qualquer alteração, consulte [TODO.md](TODO.md) para verificar se há novas solicitações de implementação, ajustes ou pendências relevantes.
+Antes de propor ou aplicar mudanças, leia a especificação técnica em [docs/spec/Especificação Técnica — Assistente de IA.md](docs/spec/Especifica%C3%A7%C3%A3o%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA.md) e mantenha a implementação alinhada ao escopo do projeto.
+
+Antes de iniciar qualquer alteração, consulte [TODO.md](TODO.md) para verificar se há novas solicitações de implementação, ajustes ou pendências relevantes.
 A prioridade é entregar uma base sólida para a Fase 1, sem perder o desenho de arquitetura que permitirá a extensão futura para a Fase 2.
 
 Além disso:

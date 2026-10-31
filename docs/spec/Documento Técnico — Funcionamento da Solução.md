@@ -1,7 +1,7 @@
 # Documento Técnico — Funcionamento da Solução
 
 Versão: 1.0
-Status: Proposta
+Status: Aprovada
 Última atualização: 31/10/2026
 
 ---

@@ -1,7 +1,7 @@
 # Backlog Inicial — MVP Fase 1
 
 Versão: 1.0
-Status: Proposta
+Status: Aprovada
 Última atualização: 31/10/2026
 
 ---

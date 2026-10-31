@@ -1,7 +1,7 @@
 Especificação Técnica — Assistente de IA para Suporte GLPI
 
 Versão: 1.0
-Status: Proposta
+Status: Aprovada
 Última atualização: 30/10/2026
 
 ---

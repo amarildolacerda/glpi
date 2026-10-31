@@ -82,7 +82,7 @@ Para informações detalhadas sobre requisitos, arquitetura, implementação e p
 
 ### Especificação
 - [docs/spec/README.md](docs/spec/README.md)
-- [Especificação Técnica — Assistente de IA](docs/spec/Especificação%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA)
+- [Especificação Técnica — Assistente de IA](docs/spec/Especifica%C3%A7%C3%A3o%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA.md)
 - [Arquitetura do Sistema — Assistente de IA para GLPI](docs/spec/Arquitetura%20do%20Sistema%20%E2%80%94%20Assistente%20de%20IA%20para%20GLPI.md)
 - [Documento Técnico — Funcionamento da Solução](docs/spec/Documento%20T%C3%A9cnico%20%E2%80%94%20Funcionamento%20da%20Solu%C3%A7%C3%A3o.md)
 
