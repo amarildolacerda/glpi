@@ -217,7 +217,7 @@ Camada de guardrails funcional, segura e documentada.
 
 ## SP8 — Observabilidade e feedback
 
-Status: TODO
+Status: DONE
 
 ### Objetivo
 Registrar a interação, capturar feedback e coletar métricas para melhoria contínua.

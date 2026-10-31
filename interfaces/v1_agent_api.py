@@ -10,10 +10,14 @@ from core.schemas import (
     SuggestRequest,
     SuggestResponse,
 )
+from feedback.logger import FeedbackLogger
+from feedback.metrics import MetricsCollector
 
 router = APIRouter(tags=["v1"])
 orchestrator = Orchestrator()
 glpi_client = GLPIClient()
+feedback_logger = FeedbackLogger()
+metrics_collector = MetricsCollector()
 
 
 @router.post("/sugerir", response_model=SuggestResponse)
@@ -28,9 +32,25 @@ async def aprovar(payload: ApprovalRequest) -> dict:
 
 @router.post("/feedback")
 async def feedback(payload: FeedbackRequest) -> dict:
+    recorded = feedback_logger.log(
+        payload.interacao_id,
+        payload.util,
+        payload.editado,
+        payload.comentario,
+    )
+    metric_entry = metrics_collector.record(
+        payload.interacao_id,
+        confianca=0.0,
+        util=payload.util,
+        editado=payload.editado,
+        comentario=payload.comentario,
+    )
     return {
         "status": "registered",
         "interacao_id": payload.interacao_id,
+        "feedback": recorded,
+        "metrics": metric_entry,
+        "summary": metrics_collector.snapshot(),
     }
 
 
