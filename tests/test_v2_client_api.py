@@ -5,11 +5,11 @@ from main import app
 client = TestClient(app)
 
 
-def test_phase2_client_can_route_simple_request() -> None:
+def test_v2_client_can_route_simple_request() -> None:
     payload = {
         "pergunta": "Preciso recuperar minha senha para entrar no portal.",
         "canal": "portal",
-        "cliente_token": "phase2-demo-token",
+        "cliente_token": "v2-demo-token",
     }
 
     response = client.post("/v2/atender", json=payload)
