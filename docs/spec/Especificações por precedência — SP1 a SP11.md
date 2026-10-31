@@ -296,7 +296,7 @@ MVP funcional da Fase 1, pronto para uso controlado e validação operacional.
 
 ## SP11 — Evolução para Fase 2
 
-Status: TODO
+Status: DONE
 
 ### Objetivo
 Preparar a evolução do mesmo núcleo para atendimento direto ao cliente com políticas de segurança mais rígidas.
