@@ -29,6 +29,9 @@ A prioridade inicial é a Fase 1: apoio ao agente humano. A Fase 2 (autoatendime
 6. Nunca expor segredos no repositório: usar variáveis de ambiente e secret manager.
 7. Registrar interações e feedback para métricas e melhoria contínua.
 8. Garantir idempotência na criação de tickets e auditoria completa das ações.
+9. Todo desenvolvimento de código deve ocorrer no branch `dev`.
+10. A promoção para `main` só deve ocorrer com autorização explícita e prévia.
+11. Qualquer alteração em produção deve ser feita por merge ou release previamente aprovado, nunca diretamente em `main`.
 
 ## Arquitetura esperada
 
