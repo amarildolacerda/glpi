@@ -94,7 +94,7 @@ glpi-ai-support/
 │   ├── glpi_client.py
 │   └── schemas.py           # Pydantic models
 ├── interfaces/
-│   ├── phase1_agent_api.py
+│   ├── v1_agent_api.py
 │   └── phase2_client_api.py  # Futuro
 ├── feedback/
 │   ├── logger.py
@@ -155,7 +155,7 @@ RNF9 Testes automatizados no núcleo ≥ 80% cobertura
 
 6. Contratos de API
 
-6.1 POST /fase1/sugerir
+6.1 POST /v1/sugerir
 
 Request
 
@@ -184,7 +184,7 @@ Response
   "requer_aprovacao": true,
   "tickets_similares": [{"id": 100, "titulo": "..."}]
 }
-6.2 POST /fase1/aprovar
+6.2 POST /v1/aprovar
 
 Cria ticket no GLPI após revisão do agente. Aceita payload do ticket_sugerido com possíveis edições.
 
@@ -198,7 +198,7 @@ Request
 Response
 
 { "ticket_id": 2048, "url": "https://glpi/ticket.form.php?id=2048" }
-6.3 POST /fase1/feedback
+6.3 POST /v1/feedback
 
 Request
 
@@ -229,7 +229,7 @@ Response (escalonamento)
 
 7.1 Fase 1 — Sugestão e aprovação
 
-Agente ──▶ /fase1/sugerir ──▶ Orchestrator
+Agente ──▶ /v1/sugerir ──▶ Orchestrator
                                 │
                                 ├─▶ RAG (busca KB)
                                 ├─▶ LLM (gera resposta + classificação)
@@ -238,8 +238,8 @@ Agente ──▶ /fase1/sugerir ──▶ Orchestrator
                                        │
 Agente ◀── sugestão + confiança ◀──────┘
    │
-   ├── [Edita e aprova] ──▶ /fase1/aprovar ──▶ GLPI Client ──▶ ticket criado
-   └── [Rejeita] ──▶ /fase1/feedback ──▶ Feedback Logger
+   ├── [Edita e aprova] ──▶ /v1/aprovar ──▶ GLPI Client ──▶ ticket criado
+   └── [Rejeita] ──▶ /v1/feedback ──▶ Feedback Logger
 
 7.2 Fase 2 — Atendimento direto
 

@@ -59,16 +59,42 @@ Esse desenho facilita evolução, manutenção e testes sem misturar regras de n
 
 ## Status do projeto
 
-- Status: proposta / em estruturação inicial
+- Status: em estruturação inicial com base documental e arquitetural consolidadas
 - Fase prioritária: Fase 1
-- Base documental: especificação técnica em andamento
+- Base documental: especificação, arquitetura, documento técnico, checklist e backlog definidos
+- Regra de governança: desenvolvimento em `dev`; promoção para `main` apenas com autorização prévia
 
-## Documentação
+## Instalação rápida
 
-Para informações detalhadas sobre requisitos, arquitetura, APIs e regras técnicas, consulte:
+Para preparar o ambiente em modo local ou Docker, use o script de instalação:
 
-- [Especificação Técnica — Assistente de IA](docs/Especificação%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA)
+```bash
+bash install.sh --mode local
+# ou
+bash install.sh --mode docker
+```
+
+O script detecta o ambiente, prepara o venv/local ou inicia o compose, e pode ser usado em modo de validação com `--dry-run` para verificar o que seria executado.
+
+## Documentação disponível
+
+Para informações detalhadas sobre requisitos, arquitetura, implementação e processo, consulte:
+
+### Especificação
+- [docs/spec/README.md](docs/spec/README.md)
+- [Especificação Técnica — Assistente de IA](docs/spec/Especificação%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA)
+- [Arquitetura do Sistema — Assistente de IA para GLPI](docs/spec/Arquitetura%20do%20Sistema%20%E2%80%94%20Assistente%20de%20IA%20para%20GLPI.md)
+- [Documento Técnico — Funcionamento da Solução](docs/spec/Documento%20T%C3%A9cnico%20%E2%80%94%20Funcionamento%20da%20Solu%C3%A7%C3%A3o.md)
+
+### Plano de execução
+- [docs/plan/README.md](docs/plan/README.md)
+- [Backlog Inicial — MVP Fase 1](docs/plan/Backlog%20Inicial%20%E2%80%94%20MVP%20Fase%201.md)
+- [Checklist de Entregáveis — Assistente de IA para GLPI](docs/plan/Checklist%20de%20Entreg%C3%A1veis%20%E2%80%94%20Assistente%20de%20IA%20para%20GLPI.md)
 - [AGENTS.md](AGENTS.md)
+
+### Regra de processo
+
+Antes de qualquer implementação de código, é obrigatório garantir que exista uma especificação válida em [docs/spec](docs/spec) e um plano de execução em [docs/plan](docs/plan). A execução só começa após essa revisão.
 
 ## Observações importantes
 
