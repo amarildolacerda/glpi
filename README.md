@@ -59,15 +59,20 @@ Esse desenho facilita evolução, manutenção e testes sem misturar regras de n
 
 ## Status do projeto
 
-- Status: proposta / em estruturação inicial
+- Status: em estruturação inicial com base documental e arquitetural consolidadas
 - Fase prioritária: Fase 1
-- Base documental: especificação técnica em andamento
+- Base documental: especificação, arquitetura, documento técnico, checklist e backlog definidos
+- Regra de governança: desenvolvimento em `dev`; promoção para `main` apenas com autorização prévia
 
-## Documentação
+## Documentação disponível
 
-Para informações detalhadas sobre requisitos, arquitetura, APIs e regras técnicas, consulte:
+Para informações detalhadas sobre requisitos, arquitetura, implementação e processo, consulte:
 
 - [Especificação Técnica — Assistente de IA](docs/Especificação%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA)
+- [Arquitetura do Sistema — Assistente de IA para GLPI](docs/Arquitetura%20do%20Sistema%20%E2%80%94%20Assistente%20de%20IA%20para%20GLPI.md)
+- [Documento Técnico — Funcionamento da Solução](docs/Documento%20T%C3%A9cnico%20%E2%80%94%20Funcionamento%20da%20Solu%C3%A7%C3%A3o.md)
+- [Checklist de Entregáveis — Assistente de IA para GLPI](docs/Checklist%20de%20Entreg%C3%A1veis%20%E2%80%94%20Assistente%20de%20IA%20para%20GLPI.md)
+- [Backlog Inicial — MVP Fase 1](docs/Backlog%20Inicial%20%E2%80%94%20MVP%20Fase%201.md)
 - [AGENTS.md](AGENTS.md)
 
 ## Observações importantes
