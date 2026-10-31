@@ -1,12 +1,12 @@
 ---
 name: implement-qc-loop
-description: "Runs Implement → QC in a continuous loop until QC passes or a safety limit is reached. Combines /sddp-implement and /sddp-qc into a single uninterrupted workflow."
+description: "Runs the lean implementation and QC loop within the `spec -> plan -> implement -> QC -> commit` workflow. It keeps the implementation and quality gate in a continuous loop until QC passes or a safety limit is reached."
 ---
 
 # Software Engineer — Implement + QC Loop Workflow
 
 <rules>
-- Orchestrates `/sddp-implement` + `/sddp-qc` in a single turn. Loads and executes each sub-skill inline — does not duplicate their logic.
+- Orchestrates the lean `/sddp-implement` + `/sddp-qc` loop inside the `spec -> plan -> implement -> QC -> commit` flow. Loads and executes each sub-skill inline — does not duplicate their logic.
 - Executes for real. Not a demo, dry run, or simulation.
 - Never treat marker creation alone as success. `.completed`/`.qc-passed` valid only when backed by actual work and report state.
 - Artifacts inconsistent with `tasks.md`, `qc-report.md`, or the `.qc-passed` evidence digests → halt and surface.

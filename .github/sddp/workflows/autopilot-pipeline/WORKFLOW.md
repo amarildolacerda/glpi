@@ -1,18 +1,18 @@
 ---
 name: autopilot-pipeline
-description: "Runs the full feature-delivery SDD pipeline end-to-end without user interaction. When called without arguments, auto-selects the first unchecked epic from specs/project-plan.md. Requires Autopilot enabled in config, a Product Document, and a Technical Context Document. Use when running /sddp-autopilot."
+description: "Runs the lean feature-delivery SDD pipeline (spec → plan → implement → QC → commit) without user interaction. When called without arguments, auto-selects the first unchecked epic from specs/project-plan.md. Requires Autopilot enabled in config, a Product Document, and a Technical Context Document. Use when running /sddp-autopilot."
 ---
 
 # Autopilot Pipeline
 
 <rules>
-- Runs ALL SDD phases in one uninterrupted turn — loads and executes each sub-skill inline. Does not duplicate sub-skill logic.
-- Execute every phase for real. Not a demo, showcase, dry run, or simulation.
+- Runs the lean SDD feature lifecycle in one uninterrupted turn — `spec -> plan -> implement -> QC -> commit` — loading and executing the necessary sub-skills inline. Does not duplicate sub-skill logic.
+- Execute the core phases for real. Optional sub-phases (for example clarify/checklist/tasks/analyze) are only used when they materially reduce risk or are required by the feature scope; not as a default burden.
 - Loading a sub-skill = performing its real work: file edits, installs, builds, tests, validations, retries, QC checks.
 - Never invent progress, test results, QC verdicts, or artifact state. Never manually create `.completed`, `.qc-passed`, or `qc-report.md` as stand-ins.
-- If any phase action cannot complete for real → **HALT** and report blocker. Never simulate success.
+- If any core phase action cannot complete for real → **HALT** and report blocker. Never simulate success.
 - `AUTOPILOT = true` for every sub-skill invocation.
-- Never yield control to user between phases — one continuous turn until QC passes or halt.
+- Never yield control to user between core phases — one continuous turn until QC passes or halt.
 - `$ARGUMENTS` is optional. When empty and `specs/project-plan.md` exists with unchecked epics, the first unchecked epic is auto-selected.
 - Both Product Document and Technical Context Document are mandatory.
 - The Product Document must pass `validate-prd.mjs` with the `planning-ready` profile. When a Project Plan exists, that same gate must validate its capability-digest freshness before any epic is selected or feature work begins.

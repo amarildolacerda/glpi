@@ -32,13 +32,13 @@
 
 ## Loop Settings
 
-**MaxIterations**: 10
+**MaxIterations**: 5
 
 ## QC Strictness
 
 <!-- Profile: standard | strict | minimal. Override Categories: comma-separated category:required|optional pairs. -->
 
-**Profile**: standard
+**Profile**: minimal
 **Override Categories**:
 
 ## Derived QC Policy

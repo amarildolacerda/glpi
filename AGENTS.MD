@@ -44,20 +44,19 @@ A prioridade inicial é a Fase 1: apoio ao agente humano. A Fase 2 (autoatendime
 
 ## Fluxo SDDP
 
-O fluxo de uma feature segue a sequência do pipeline SDDP, implementada nos workflows de [.github/sddp/workflows/](.github/sddp/workflows/) e executável de forma integrada pelo auto-piloto `sddp-autopilot-pipeline`:
+O pipeline lean do projeto segue a sequência `spec -> plan -> implement -> QC -> commit`, implementada nos workflows de [.github/sddp/workflows/](.github/sddp/workflows/) e executável de forma integrada pelo auto-piloto `sddp-autopilot-pipeline`:
 
-1. **Specify** — criar/refinar a especificação da feature em `specs/NNNNN-slug/spec.md`.
-2. **Clarify** — esclarecer ambiguidades e consolidar requisitos.
-3. **Plan** — gerar `specs/NNNNN-slug/plan.md` com arquitetura, passos e riscos.
-4. **Checklist** — gerar/verificar o checklist de qualidade da feature.
-5. **Tasks** — decompor o plano em tarefas rastreáveis.
-6. **Analyze** — validar consistência, riscos e compliance antes da implementação.
-7. **Implement + QC** — implementar as tarefas com loop de quality control e evidência objetiva.
+1. **Spec** — criar/refinar a especificação da feature em `specs/NNNNN-slug/spec.md`.
+2. **Plan** — gerar `specs/NNNNN-slug/plan.md` com arquitetura, passos, riscos e critérios de validação.
+3. **Implement** — executar a implementação em pequenos incrementos e com evidência objetiva.
+4. **QC** — validar qualidade, testes e conformidade antes de prosseguir.
+5. **Commit** — preparar a entrega final, registrar a evidência e consolidar o resultado.
 
 Regras do fluxo:
 
 - Usar os agentes `sddp-*` (lista em [.opencode/agents/](.opencode/agents/)) por meio da ferramenta `task`, as skills em [.github/skills/](.github/skills/) e as instruções em [.github/instructions/](.github/instructions/).
-- Nenhuma implementação sem spec + plano aprovados no formato SDDP (`spec.md` e `plan.md` da feature), com os gates do pipeline atendidos.
+- Aplicar a sequência lean `spec -> plan -> implement -> QC -> commit`; evitar etapas extras que não agregam valor ao fluxo.
+- Nenhuma implementação sem `spec.md` + `plan.md` aprovados no formato SDDP e sem as validações mínimas da etapa anterior.
 - Não avançar para a próxima etapa sem evidência de que a etapa anterior foi validada.
 - As respostas sugeridas devem sempre incluir nível de confiança e exigir aprovação humana antes da criação de ticket.
 - Implementar em pequenos incrementos, validando um requisito por vez; preferir testes antes da lógica de negócio sempre que possível.

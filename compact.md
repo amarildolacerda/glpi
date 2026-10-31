@@ -21,7 +21,7 @@
 
 - **ADR-0001**: Fase 2 só via API (`/v2/atender`) consumida pelo portal GLPI; sem frontend neste projeto.
 - **ADR-0002**: SDDP substitui SP1–SP11; docs antigos = `docs/legacy/` (histórico, não editar).
-- Pipeline por feature: Specify → Clarify → Plan → Checklist → Tasks → Analyze → Implement+QC; auto-piloto `sddp-autopilot-pipeline`; agentes `sddp-*` via `task` (allowlist no `opencode.json`).
+- Pipeline por feature: Spec → Plan → Implement → QC → Commit; auto-piloto `sddp-autopilot-pipeline`; agentes `sddp-*` via `task` (allowlist no `opencode.json`).
 - Regras não negociáveis preservadas na `AGENTS.MD`: branch `dev`, promoção com autorização, `.env` fora/`.env_default` atualizado, `vx.x.x` centralizado, guardrails+aprovação humana, idempotência+auditoria, evidência objetiva por gate.
 - **Compacto de sessão**: regerar `compact.md` após cada etapa; consultar antes de nova sessão (seção própria na AGENTS.MD).
 - Identidade git local: Amarildo de Lacerda <amarildo_51@msn.com>. Commits em PT curto com prefixo `+`.

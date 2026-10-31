@@ -1,7 +1,7 @@
 ---
 created: 2026-10-30
 prd_source: specs/prd.md
-prd_capability_digest: 8fc68e7cfe9261a1eebfaf562a65df068d11ea2333894ae605a81f9227ee715b
+prd_capability_digest: e4fdb1652180c5ebda159def87ea695eabe21a818604c3036cda91762b8f4652
 sad_source: specs/sad.md
 dod_source: none
 ---
@@ -9,6 +9,9 @@ dod_source: none
 # Project Implementation Plan
 
 **Product**: Assistente de IA para Suporte GLPI | **Created**: 2026-10-30 | **Status**: planejamento inicial | **Epics**: 8 (P1: 5, P2: 3) | **Waves**: 3
+
+> Pipeline lean do projeto: `spec -> plan -> implement -> QC -> commit`.
+> O fluxo operacional é orientado à entrega mínima com validação contínua: documentação de especificação, plano de implementação, execução, garantia de qualidade e fechamento do resultado. Etapas auxiliares como `clarify`, `checklist` e `tasks` permanecem opcionais e só entram quando agregam valor ao escopo da feature.
 
 ## Status das Etapas por Precedência e Dívidas de Processo
 
