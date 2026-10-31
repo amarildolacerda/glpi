@@ -61,3 +61,9 @@ class AutoPilotResponse(BaseModel):
     resposta: str
     confianca: float
     ticket_id: int | None = None
+
+
+class ErrorResponse(BaseModel):
+    code: str
+    message: str
+    details: list[dict[str, object]] | dict[str, object] | None = None

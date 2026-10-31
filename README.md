@@ -80,21 +80,19 @@ O script detecta o ambiente, prepara o venv/local ou inicia o compose, e pode se
 
 Para informações detalhadas sobre requisitos, arquitetura, implementação e processo, consulte:
 
-### Especificação
-- [docs/spec/README.md](docs/spec/README.md)
-- [Especificação Técnica — Assistente de IA](docs/spec/Especificação%20T%C3%A9cnica%20%E2%80%94%20Assistente%20de%20IA)
-- [Arquitetura do Sistema — Assistente de IA para GLPI](docs/spec/Arquitetura%20do%20Sistema%20%E2%80%94%20Assistente%20de%20IA%20para%20GLPI.md)
-- [Documento Técnico — Funcionamento da Solução](docs/spec/Documento%20T%C3%A9cnico%20%E2%80%94%20Funcionamento%20da%20Solu%C3%A7%C3%A3o.md)
+### Especificação e arquitetura
+- [specs/prd.md](specs/prd.md) — requisitos do produto
+- [specs/sad.md](specs/sad.md) — arquitetura e decisões (ADRs em [specs/adrs/](specs/adrs/))
+- Documentação legada migrada em [docs/legacy/spec](docs/legacy/spec) e [docs/legacy/plan](docs/legacy/plan) (referência histórica)
 
 ### Plano de execução
-- [docs/plan/README.md](docs/plan/README.md)
-- [Backlog Inicial — MVP Fase 1](docs/plan/Backlog%20Inicial%20%E2%80%94%20MVP%20Fase%201.md)
-- [Checklist de Entregáveis — Assistente de IA para GLPI](docs/plan/Checklist%20de%20Entreg%C3%A1veis%20%E2%80%94%20Assistente%20de%20IA%20para%20GLPI.md)
-- [AGENTS.md](AGENTS.md)
+- [specs/project-plan.md](specs/project-plan.md) — ondas, épicos e dependências
+- Planos legados do modelo SP1–SP11 em [docs/legacy/plan/](docs/legacy/plan)
+- [AGENTS.MD](AGENTS.MD)
 
 ### Regra de processo
 
-Antes de qualquer implementação de código, é obrigatório garantir que exista uma especificação válida em [docs/spec](docs/spec) e um plano de execução em [docs/plan](docs/plan). A execução só começa após essa revisão.
+Antes de qualquer implementação de código, é obrigatório garantir que exista uma especificação válida ([specs/prd.md](specs/prd.md), [specs/sad.md](specs/sad.md)) e um plano de execução ([specs/project-plan.md](specs/project-plan.md) e a spec/plano da feature em `specs/NNNNN-slug/`). A execução só começa após essa revisão (fluxo SDDP — ver [AGENTS.md](AGENTS.md)).
 
 ## Observações importantes
 
