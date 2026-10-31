@@ -64,6 +64,18 @@ Esse desenho facilita evolução, manutenção e testes sem misturar regras de n
 - Base documental: especificação, arquitetura, documento técnico, checklist e backlog definidos
 - Regra de governança: desenvolvimento em `dev`; promoção para `main` apenas com autorização prévia
 
+## Instalação rápida
+
+Para preparar o ambiente em modo local ou Docker, use o script de instalação:
+
+```bash
+bash install.sh --mode local
+# ou
+bash install.sh --mode docker
+```
+
+O script detecta o ambiente, prepara o venv/local ou inicia o compose, e pode ser usado em modo de validação com `--dry-run` para verificar o que seria executado.
+
 ## Documentação disponível
 
 Para informações detalhadas sobre requisitos, arquitetura, implementação e processo, consulte:
